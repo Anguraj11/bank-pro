@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-slate-950">
+    <div
+      class="w-full flex flex-col items-center bg-slate-950 text-white font-sans"
+    >
+      <div class="relative w-[80dvw]">
+        <!-- Header section -->
+        <header
+          class="fixed top-0 left-0 right-0 z-10 shadow-md bg-transparent"
+        >
+          <div
+            class="mx-auto flex justify-between items-center px-4 py-3 sm:px-6 lg:px-8 max-w-7xl bg-slate-800 rounded-full"
+          >
+            <!-- Logo  -->
+            <a href="index.html" class="flex items-center">
+              <img
+                src="./images/logos/logo.png"
+                alt="Logo"
+                class="w-10 h-auto"
+              />
+            </a>
+            <!-- Navigation -->
+            <div class="hidden sm:flex space-x-4">
+              <a
+                href="#home"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                About
+              </a>
+              <a
+                href="#features"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Features
+              </a>
+              <a
+                href="#services"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Services
+              </a>
+              <a
+                href="#contact"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Contact
+              </a>
+            </div>
+            <!-- profile-dropdown -->
+            <div
+              class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              id="profile-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">Open user menu</span>
+              <img
+                class="size-8 rounded-full"
+                src="./images/backgrounds/user.png"
+                alt=""
+              />
+              <div
+                class="absolute right-0 top-10 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none hidden"
+                id="profile-menu"
+              >
+                <div class="">
+                  <a
+                    href="admin-dashboard.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Dashboard
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="user-account.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Your Profile
+                  </a>
+                </div>
+                <div class="">
+                  <a
+                    href="user-withdraw.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Withdraw
+                  </a>
+                </div>
+                <div class="">
+                  <a
+                    href="user-deposit.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Deposit
+                  </a>
+                </div>
+                <div class="">
+                  <a
+                    href="user-balance.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Balance
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="user-editAccount.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                  >
+                    Settings
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="index.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-3"
+                  >
+                    Sign out
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- if user doesnt login to the -->
+            <!-- <div class="hidden sm:flex items-center space-x-4"> -->
+            <div class="hidden sm:flex items-center space-x-4">
+              <a
+                href="user-login.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Login
+              </a>
+              <a
+                href="user-register.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Register
+              </a>
+            </div>
+            <!-- Mobile Menu Icon -->
+            <div class="md:hidden flex items-center">
+              <button id="menu-toggle" class="text-gray-400 hover:text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden bg-gray-800 md:hidden z-50 mt-[70px]"
+        >
+          <ul class="flex flex-col space-y-4 p-4">
+            <li><a href="#home" class="hover:text-cyan-400">Home</a></li>
+            <li>
+              <a href="#features" class="hover:text-cyan-400">Features</a>
+            </li>
+            <li><a href="#about" class="hover:text-cyan-400">About</a></li>
+            <li>
+              <a href="#services" class="hover:text-cyan-400">Services</a>
+            </li>
+            <li><a href="#support" class="hover:text-cyan-400">Support</a></li>
+            <li>
+              <a href="user-login.html" class="hover:text-cyan-400">Login</a>
+            </li>
+            <li>
+              <a href="user-register.html" class="hover:text-cyan-400"
+                >Register</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- hero -->
+        <section class="bg-transparent mt-16 sm:mt-8 text-white" id="home">
+          <div
+            class="container mx-auto flex flex-col-reverse lg:flex-row items-center px-4 py-12 lg:py-20"
+          >
+            <div class="lg:w-1/2 text-center lg:text-left">
+              <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+                Welcome to <span class="text-blue-500">YourBank</span>
+              </h1>
+              <p class="text-lg lg:text-xl mb-6">
+                Your trusted partner for secure banking, seamless transactions,
+                and financial growth.
+              </p>
+              <div
+                class="h-full flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4"
+              >
+                <button
+                  class="bg-blue-700 border border-transparent hover:bg-slate-950 text-white py-3 px-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-500 shadow-white hover:border-white"
+                >
+                  Get Started
+                </button>
+                <button
+                  class="bg-transparent border border-black hover:bg-white py-3 px-6 rounded-lg text-white hover:text-slate-950 transition-all duration-500"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:w-1/2 flex justify-center lg:justify-end">
+              <img
+                src="./images/backgrounds/hero.png"
+                alt="Banking illustration"
+                class="w-3/4 lg:w-full"
+              />
+            </div>
+          </div>
+        </section>
+        <!-- about -->
+        <section class="bg-transparent py-24 lg:py-24" id="about">
+          <div
+            class="container mx-auto flex flex-col lg:flex-row items-center gap-12 px-4"
+          >
+            <div class="lg:w-1/2 flex justify-center">
+              <img
+                src="./images/backgrounds/about.png"
+                alt="About Us Illustration"
+                class="rounded-lg shadow-lg"
+              />
+            </div>
+
+            <div class="lg:w-1/2 text-center lg:text-left">
+              <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+                About <span class="text-blue-600">YourBank</span>
+              </h2>
+              <p class="text-white text-lg mb-6">
+                At YourBank, we are committed to providing innovative financial
+                solutions tailored to your needs. Our mission is to empower
+                individuals and businesses with tools to manage and grow their
+                wealth securely and efficiently.
+              </p>
+              <p class="text-white text-lg mb-6">
+                With a legacy of trust, cutting-edge technology, and dedicated
+                support, we strive to deliver an unparalleled banking
+                experience.
+              </p>
+              <button
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- features -->
+        <section class="bg-transparent py-24" id="features">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-white mb-4">
+                Why Choose <span class="text-blue-600">YourBank?</span>
+              </h2>
+              <p class="text-white">
+                Discover the features that make YourBank the perfect choice for
+                all your financial needs.
+              </p>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+              <div class="lg:w-1/2 space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="bg-blue-600 text-white rounded-full p-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="{2}"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 8v4l3 3m6-8a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-semibold text-white">
+                      Instant Transfers
+                    </h4>
+                    <p class="text-white">
+                      Experience fast and secure transactions with real-time
+                      processing.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="bg-blue-600 text-white rounded-full p-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="{2}"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M20 13V7a2 2 0 00-2-2h-4m4 8v4a2 2 0 01-2 2h-4m4-10h-4m-4 0H8m4 0V7m0 4v4m0 4H8a2 2 0 01-2-2v-4m0 0V7a2 2 0 012-2h4"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-semibold text-white">
+                      Secure Banking
+                    </h4>
+                    <p class="text-white">
+                      Your data is protected with top-notch encryption and
+                      security measures.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="bg-blue-600 text-white rounded-full p-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="{2}"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 10h11M9 21V9a2 2 0 012-2h8m-2 14h2a2 2 0 002-2v-5.5m-14 7.5v-1.5m0 0h-3v3m6-3h1a2 2 0 012 2v1.5m-6-1.5h6"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-semibold text-white">
+                      Easy Investments
+                    </h4>
+                    <p class="text-white">
+                      Grow your wealth with our tailored investment solutions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:w-1/2 flex justify-center">
+                <img
+                  src="./images/backgrounds/features.jpg"
+                  alt="Bank Features Illustration"
+                  class="rounded-lg shadow-md shadow-blue-300 bg-blend-screen"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- services -->
+        <section class="bg-transparent py-24" id="services">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-white mb-4">
+                Our <span class="text-blue-600">Services</span>
+              </h2>
+              <p class="text-white">
+                Explore the wide range of banking solutions we offer to meet
+                your needs.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-8 h-8 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12h6m2 0a2 2 0 110 4H7a2 2 0 110-4m14 0a2 2 0 11-4 0 2 2 0 014 0zm-10 0a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Savings & Checking Accounts
+                </h3>
+                <p class="text-white">
+                  Manage your funds effortlessly with our secure savings and
+                  checking accounts.
+                </p>
+              </div>
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-8 h-8 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 9l4-4m0 0l-4-4m4 4H3m13 9l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Loans & Mortgages
+                </h3>
+                <p class="text-white">
+                  Get competitive rates and flexible terms on loans and
+                  mortgages tailored to your needs.
+                </p>
+              </div>
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-8 h-8 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M11 11V9a4 4 0 018 0v2m-8 0v10m-4 0h12M6 20V9a4 4 0 018 0v11"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Mobile Banking
+                </h3>
+                <p class="text-white">
+                  Access your account anytime, anywhere with our feature-rich
+                  mobile app.
+                </p>
+              </div>
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-8 h-8 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2m16 0H4"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Mobile Banking
+                </h3>
+                <p class="text-white">
+                  Access your account anytime, anywhere with our feature-rich
+                  mobile app.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- testimonials -->
+        <section class="bg-transparent py-12">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-white mb-4">
+                What Our <span class="text-blue-600">Customers Say</span>
+              </h2>
+              <p class="text-white">
+                Hear from the people who trust YourBank with their financial
+                needs.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src="./images/backgrounds/user.png"
+                  alt="users"
+                  class="w-20 h-20 mx-auto rounded-full mb-4"
+                />
+                <h3 class="text-xl font-semibold text-white mb-2">Jane Doe</h3>
+                <p class="text-sm text-white mb-4">New York, USA</p>
+                <p class="text-white">
+                  YourBank has completely changed the way I manage my finances.
+                  The mobile app is user-friendly, and their customer service is
+                  outstanding!
+                </p>
+              </div>
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src="./images/backgrounds/user.png"
+                  alt="users"
+                  class="w-20 h-20 mx-auto rounded-full mb-4"
+                />
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  John Smith
+                </h3>
+                <p class="text-sm text-white mb-4">London, Uk</p>
+                <p class="text-white">
+                  I got the best mortgage rates through YourBank. The process
+                  was smooth, and the team was very supportive every step of the
+                  way.
+                </p>
+              </div>
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src="./images/backgrounds/user.png"
+                  alt="users"
+                  class="w-20 h-20 mx-auto rounded-full mb-4"
+                />
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Aisha Khan
+                </h3>
+                <p class="text-sm text-white mb-4">Dubai, UAE</p>
+                <p class="text-white">
+                  ith YourBank, I feel secure knowing my investments are in good
+                  hands. Their expert advice has been invaluable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- security Compliances -->
+        <section class="bg-transparent py-24" id="privacy-policy">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-white mb-4">
+                Your Security,
+                <span class="text-blue-600">Our Priority</span>
+              </h2>
+              <p class="text-white">
+                We prioritize your safety by using cutting-edge technology and
+                adhering to global standards.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-10 h-10 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 15v5m0 0H8m4 0h4m-4-5a2 2 0 100-4 2 2 0 000 4z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Data Encryption
+                </h3>
+                <p class="text-white">
+                  All your transactions and personal information are protected
+                  with industry-standard encryption.
+                </p>
+              </div>
+
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-10 h-10 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9.75 9.75h4.5m-4.5 0a1.5 1.5 0 110-3h4.5a1.5 1.5 0 110 3zm0 3h4.5m-4.5 0a1.5 1.5 0 110-3h4.5a1.5 1.5 0 110 3z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Regulatory Compliance
+                </h3>
+                <p class="text-white">
+                  We adhere to international banking regulations and standards
+                  for maximum security.
+                </p>
+              </div>
+
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-10 h-10 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 12v3.75m0 0H8.25m3.75 0h3.75M9 6.75h6m-6 3h6m-6 3h6"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Fraud Protection
+                </h3>
+                <p class="text-white">
+                  Our advanced fraud detection systems monitor every transaction
+                  to keep you safe.
+                </p>
+              </div>
+
+              <div
+                class="bg-transparent shadow-md shadow-blue-300 rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{2}"
+                    stroke="currentColor"
+                    class="w-10 h-10 text-blue-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10.125 9.75l1.5-1.5 1.5 1.5m-3 4.5l1.5 1.5 1.5-1.5m-6.75 3a9 9 0 1116.125-7.5"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  24/7 Monitoring
+                </h3>
+                <p class="text-white">
+                  Our systems are monitored around the clock to ensure your
+                  funds and data are secure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- contact us -->
+        <section class="py-24 bg-transparent" id="support">
+          <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-semibold text-white mb-8">Get in Touch</h2>
+            <p class="text-lg text-white mb-12">
+              Have questions or need assistance? We're here to help.
+            </p>
+
+            <form
+              class="space-y-6 max-w-2xl mx-auto bg-transparent p-8 rounded-lg shadow-md shadow-blue-500"
+              onSubmit="{handleSubmit}"
+            >
+              <div>
+                <label
+                  htmlFor="name"
+                  class="block text-sm font-medium text-white"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  class="mt-1 block w-full px-4 py-2 border border-transparent rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-black shadow-blue-500"
+                  value=""
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  class="block text-sm font-medium text-white"
+                >
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  class="mt-1 block w-full px-4 py-2 border border-transparent rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-black shadow-blue-500"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="subject"
+                  class="block text-sm font-medium text-white"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject of your message"
+                  class="mt-1 block w-full px-4 py-2 border border-transparent rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-black shadow-blue-500"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  class="block text-sm font-medium text-white"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Write your message here"
+                  rows="4"
+                  class="mt-1 block w-full px-4 py-2 border border-transparent rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-black shadow-blue-500"
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-3 px-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+
+            <div class="mt-16 max-w-2xl mx-auto text-white pt-24" id="contact">
+              <h3 class="text-2xl font-semibold text-white mb-4">Our Office</h3>
+              <p class="mb-4">123 Bank Street, Finance City, Bankland, 12345</p>
+              <p class="mb-4">Phone: +1 234 567 890</p>
+              <p>
+                Email:
+                <a
+                  href="mailto:support@yourbank.com"
+                  class="text-blue-600 hover:underline"
+                >
+                  support@yourbank.com
+                </a>
+              </p>
+            </div>
+
+            <div class="mt-12">
+              <h3 class="text-2xl font-semibold text-white mb-4">Find Us</h3>
+              <div class="aspect-w-16 aspect-h-9">
+                <iframe
+                  title="Bank Location"
+                  class="w-full h-full rounded-lg"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3708524748666!2d-122.3964696846815!3d37.79331837975654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809b12ff77a9%3A0x67f9ff466c3a56e1!2s123%20Bank%20St%2C%20San%20Francisco%2C%20CA%2094157!5e0!3m2!1sen!2sus!4v1618901422043!5m2!1sen!2sus"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- support -->
+        <section class="bg-transparent py-12">
+          <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Ready to <span class="text-blue-700">Simplify</span> Your Banking?
+            </h2>
+            <p class="text-lg text-blue-100 mb-8">
+              Join thousands of customers who trust YourBank for secure and
+              seamless financial management.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                class="bg-blue-700 border border-transparent hover:bg-slate-950 text-white py-3 px-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-500 shadow-white hover:border-white"
+                href="/user/register"
+              >
+                Open an Account
+              </a>
+              <button
+                class="bg-transparent border border-white hover:bg-white py-3 px-6 rounded-lg text-white hover:text-slate-950 transition-all duration-500"
+              >
+                Download the App
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- footer -->
+        <footer class="bg-gray-800 text-white py-8 mt-20">
+          <div
+            class="max-w-screen-xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+          >
+            <div class="flex flex-col items-center md:items-start">
+              <h3 class="text-2xl font-bold text-blue-600 mb-2">YourBank</h3>
+              <p class="text-sm text-gray-400">
+                Trusted banking for a brighter future. Secure, fast, and
+                reliable.
+              </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:space-x-8 mt-6 md:mt-0">
+              <div class="flex flex-col space-y-2">
+                <a href="#about" class="text-sm text-gray-400 hover:text-white">
+                  About Us
+                </a>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-white"
+                >
+                  Services
+                </a>
+                <a
+                  href="#contact"
+                  class="text-sm text-gray-400 hover:text-white"
+                >
+                  Contact Us
+                </a>
+                <a
+                  href="#careers"
+                  class="text-sm text-gray-400 hover:text-white"
+                >
+                  Careers
+                </a>
+              </div>
+
+              <div class="flex flex-col space-y-2 mt-6 md:mt-0">
+                <a
+                  href="#privacy-policy"
+                  class="text-sm text-gray-400 hover:text-white"
+                >
+                  Privacy Policy
+                </a>
+                <a href="#terms" class="text-sm text-gray-400 hover:text-white">
+                  Terms of Service
+                </a>
+                <a
+                  href="#support"
+                  class="text-sm text-gray-400 hover:text-white"
+                >
+                  Support
+                </a>
+              </div>
+            </div>
+
+            <div class="flex space-x-6 mt-6 md:mt-0">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center mt-8 border-t border-gray-700 pt-4">
+            <p class="text-sm text-gray-400">
+              &copy; 2025 YourBank. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script>
+    // JavaScript to toggle the mobile menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    const profileToggle = document.getElementById("profile-toggle");
+    const profileMenu = document.getElementById("profile-menu");
+
+    profileToggle.addEventListener("click", () => {
+      profileMenu.classList.toggle("hidden");
+    });
+  </script>
+</html>
